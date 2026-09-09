@@ -1,4 +1,4 @@
-name: Android APK Oluştur
+name: Android APK Olustur
 
 on:
   workflow_dispatch:
@@ -25,10 +25,7 @@ jobs:
       - name: Sistem paketlerini kur
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            git zip unzip autoconf automake libtool libltdl-dev \
-            pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev \
-            cmake libffi-dev libssl-dev
+          sudo apt-get install -y             git zip unzip autoconf automake libtool libltdl-dev             pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev             cmake libffi-dev libssl-dev
 
       - name: Buildozer kur
         run: |
@@ -36,20 +33,20 @@ jobs:
           python -m pip install "cython==3.0.11"
           python -m pip install "buildozer==1.5.0"
 
-      - name: Eski derlemeyi temizle
+      - name: Temiz derleme
         working-directory: android
         run: |
           rm -rf .buildozer
           rm -rf bin
 
-      - name: APK oluştur
+      - name: APK olustur
         working-directory: android
         env:
           PYTHONFORANDROID_PREREQUISITES_INSTALL_INTERACTIVE: "0"
         run: |
           buildozer -v android debug
 
-      - name: APK yükle
+      - name: APK yukle
         uses: actions/upload-artifact@v4
         with:
           name: Quant-Scanner-Mobile-STANDALONE-APK

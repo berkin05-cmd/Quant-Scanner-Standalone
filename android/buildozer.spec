@@ -4,7 +4,7 @@ package.name = quantscanner
 package.domain = com.quantscanner
 source.dir = .
 source.include_exts = py,txt,png,jpg,kv
-version = 2.2
+version = 2.3
 requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.0,requests==2.32.3,certifi==2025.8.3,urllib3==2.2.3,idna==3.10,charset-normalizer==3.4.3
 orientation = portrait
 fullscreen = 0
